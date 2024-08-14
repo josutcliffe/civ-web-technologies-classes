@@ -6,6 +6,7 @@
     <title>Image Gallery Grid using CSS Grid</title>
     <style>
       /* Grid Container */
+<<<<<<< HEAD
       .card-container {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr; /* Three equal columns on desktop screens */
@@ -26,6 +27,24 @@
         /* Grid Container */
         .card-container {
           grid-template-columns: 1fr; /* Single column layout on smaller screens */
+=======
+      .gallery-container {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-gap: 20px;
+          padding: 20px;
+        }
+      /* Gallery Item (Image) */
+        .gallery-items {
+          width: 100px;
+          max-width: 100%;
+          height: auto;
+        }
+      /* Media Query for Responsive Layout */
+      @media (max-width: 768px) {
+        .gallery-container {
+          grid-template-columns: 1fr; /* Single column on smaller screens */
+>>>>>>> 661ad25 (feat: challenges-05)
         }
       }
     </style>
