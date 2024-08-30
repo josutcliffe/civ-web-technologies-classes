@@ -1,9 +1,56 @@
+/* Mobile Device styles */
+.main-container {
+  padding: 10px;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+nav ul li {
+  margin-bottom: 10px;
+}
+
+#events_list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#events_list li {
+  margin-bottom: 10px;
+}
+
 .hover-example:hover {
   background-color: lightblue;
 }
 
 li:nth-child(odd) {
   color: blue;
+}
+
+nav ul li:first-child a {
+  color: green;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.sidebar h3::before {
+  content: "*** ";
+  color: gold; 
+  margin-right: 5px;
+}
+
+.sidebar h3::after {
+  content: "*** ";
+  color: gold; 
+  margin-left: 5px;
+}
+
+.sidebar h3:hover {
+  color:red;
+  background-color: black;
 }
 
 p:first-child {
@@ -31,6 +78,19 @@ a[href*="example"] {
   border: none;
   border-radius: 5px;
 }
+
+[class$="-btn"]:hover {
+  background-color: #7f96ad;
+}
+
+.main-content .news-article a:nth-child(3) {
+  color: red
+}
+
+.main-content .news-article:nth-child(2) a:nth-child(3) {
+  color: grey;
+}
+
 @font-face {
   font-family: "CustomFont";
   src: url("../fonts/Roboto/Roboto-Medium.ttf");
@@ -40,6 +100,10 @@ a[href*="example"] {
 
 .custom-font {
   font-family: "CustomFont", san-serif;
+}
+
+body {
+  font-family: "CustomFont";
 }
 
 @keyframes myFadeIn {
@@ -56,4 +120,62 @@ a[href*="example"] {
   animation-duration: 2s;
   animation-timing-function: ease-in;
   animation-iteration-count: 1;
+}
+
+/* CSS for tablet devices */
+@media screen and (min-width: 768px) {
+  /* Add tablet-specific styles here */
+  .main-container {
+    padding: 20px;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  nav ul li {
+    margin-bottom: 0;
+  }
+
+  #events_list {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+
+  #events_list li {
+    margin-bottom: 5px;
+  }
+  
+  input[type="submit"] {
+    padding: 50px;
+    border-radius: 7px;
+  }
+}
+
+/* CSS for desktop devices */
+@media screen and (min-width: 1200px) {
+  /* Add tablet-specific styles here */
+  .main-container {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  nav ul {
+    justify-content: space-between;
+  }
+
+  #events_list {
+    list-style-type: square;
+    padding-left: 40px;
+  }
+
+  #events_list li {
+    margin-bottom: 5px;
+  }
+
+  input[type="submit"] {
+    background-color: yellow;
+  }
 }
