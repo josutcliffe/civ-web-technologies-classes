@@ -1,19 +1,44 @@
-// Generate 10 random numbers between 1 and 100
-// Hint: be carful not to start at 0
+// Function to validate email addresses and return a user message
+function isValidEmail(email) {
+    let message = `The email address ${email} is `;
+    
+    // Check if the email contains exactly one "@" character
+    if (email.indexOf('@') === -1 || email.indexOf('@') !== email.lastIndexOf('@')) {
+        message += 'invalid because it must contain exactly one "@" character.';
+        return message;
+    }
 
-// Calculate the sum of the numbers
+    // Check if the "@" character is not the first or last character in the email
+    if (email.indexOf('@') === 0 || email.indexOf('@') === email.length - 1) {
+        message += 'invalid because the "@" character cannot be the first or last character.';
+        return message;
+    }
 
-// Calculate the average of the numbers
+    // Check if the email contains at least one "." character after the "@" character
+    const domainPart = email.split('@')[1];
+    if (domainPart.indexOf('.') === -1) {
+        message += 'invalid because it must contain at least one "." character after the "@" character.';
+        return message;
+    }
 
-// Calculate the square root of the average
-// Hint: use the inbuild Math object method()
+    // Check if the "." character is not the first or last character after the "@" character
+    if (domainPart.indexOf('.') === 0 || domainPart.indexOf('.') === domainPart.length - 1) {
+        message += 'invalid because the "." character cannot be the first or last character after the "@" character.';
+        return message;
+    }
 
-// Calculate the largest number
+    // Check if the email does not contain spaces
+    if (email.indexOf(' ') !== -1) {
+        message += 'invalid because it cannot contain spaces.';
+        return message;
+    }
 
-// Calculate the factorial of the largest number
-// Hint: the factorial for 5 is 5*4*3*2*1
-let factorial = 1;
-for (let index = 1; index <= maxNumber; index++) {}
+    // If all checks pass, the email is valid
+    message += 'valid.';
+    return message;
+}
 
-// Display the results using template literals
-// Hint: log them in the console.
+// Example usage
+console.log(isValidEmail("test@example.com")); // The email address test@example.com is valid.
+console.log(isValidEmail("invalid-email")); // The email address invalid-email is invalid because it must contain exactly one "@" character.
+console.log(isValidEmail("another.test@domain.co")); // The email address another.test@domain.co is valid.
