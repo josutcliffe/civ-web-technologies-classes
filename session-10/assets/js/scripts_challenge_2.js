@@ -1,11 +1,12 @@
 function isValidEmail(email) {
-    // Use expression operators, the match method, a regex and strings to validate the email
     // Regular expression for validating an email address
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     // Use the match method to check if the email matches the regex
     const result = email.match(regex);
-    // Return true if the result is not null, otherwise return false
-    return result !== null;
+    // Construct the message
+    let message = `The email address "${email}" `;
+    message += result ? `is valid.` : `is not valid.`;
+    return message;
   }
   
   // Test cases
