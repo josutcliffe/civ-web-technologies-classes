@@ -8,3 +8,6 @@ const product = {
 };
 
 // Your code goes here
+for (let index in product) {
+  console.log(`Index: ${index}, Value: ${product[index]}`);
+}
